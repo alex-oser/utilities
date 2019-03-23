@@ -5,6 +5,11 @@ export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/s
 export BLOCKSIZE=1k
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export EDITOR=/usr/bin/vim
+parse_git_branch() { 
+  git status 2>/dev/null | grep -i 'on branch' | cut -d' ' -f3 | xargs -I '{}' echo '({}) ' 
+}
+export PS1="\[\033[38;5;10m\]\u\[$(tput sgr0)\]\[\033[38;5;11m\] @ \[$(tput sgr0)\]\[\033[38;5;99m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[\033[38;5;196m\]\$(parse_git_branch)\[$(tput sgr0)\]\[\033[38;5;10m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+
 
 # General aliases and builtin preferences
 #   -----------------------------
