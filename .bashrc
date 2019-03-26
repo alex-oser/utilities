@@ -14,6 +14,9 @@ export PS1="\[\033[38;5;10m\]\u\[$(tput sgr0)\]\[\033[38;5;11m\] @ \[$(tput sgr0
 # General aliases and builtin preferences
 #   -----------------------------
 
+alias gs='git status'
+alias gp='git push'
+alias gc='git commit'
 alias pi='ssh pi@192.168.0.25'
 alias s3='sqlite3 -header -column'
 alias py='python3'
